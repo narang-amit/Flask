@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %} {{ summary["title"] }} {% endblock %}
+
+{% block favButton %}
+{% if favorited %}
+<li class="nav-item">
+  <a style = "color: crimson; font-weight: 300; padding-left: 15px;" class="nav-link" href="{{ url_for('unfavoriteRecipe', id=summary['id']) }}">Unfavorite This!</a>
+</li>
+{% else %}
+<li class="nav-item">
+  <a style = "color: crimson; font-weight: 300; padding-left: 15px;" class="nav-link" href="{{ url_for('favoriteRecipe', id=summary['id']) }}">Favorite This!</a>
+</li>
+{% endif %}
+{% endblock %}
+
+
+
+{% block content %}
+
+<h1 style="margin-top: 30px;">{{ summary["title"] }}</h1>
+{{ summary["summary"] | safe }}
+<br/>
+<h2 style="margin-top: 30px;">Ingredients</h2>
+<ul>
+    {% for ingredient in ingredients %}
+    <li>{{ ingredient["originalString"] }}</li>
+    {% endfor %}
+</ul>
+<h2 style="margin-top: 30px;">Instructions</h2>
+<ol>
+    {% for step in instructions %}
+    <li>{{ step["step"] }}</li>
+    {% endfor %}
+</ol>
+
+{% endblock %}

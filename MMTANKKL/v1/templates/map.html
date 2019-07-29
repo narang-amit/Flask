@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<style>
+  .container {
+  position: relative;
+  width: 50%;
+}
+
+/* Make the image responsive */
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+/* Style the button and place it in the middle of the container/image */
+.container .btn {
+  width: 80px;
+  height: 35px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.container .btn:hover {
+  background-color: black;
+}
+#one {
+  transform: translate(-200%,-200%);
+}
+#two {
+  transform: translate(-25%,-210%);
+}
+#three {
+  transform: translate(175%,-210%);
+}
+#four {
+  transform: translate(75%,240%);
+}
+#five {
+  transform: translate(-45%,240%);
+}
+#six {
+  transform: translate(-180%, 240%);
+}
+p {
+  text-align: center;
+}
+</style>
+<div class="container">
+  <p>Pick a district.</p>
+  <img src="../data/map.jpg" alt="map">
+<form action = "/northwest">
+  <button class="btn" id = "one">Northwest</button>
+</form>
+<form action="/north">
+  <button class="btn" id = "two">North</button>
+</form>
+<form action="northeast">
+  <button class="btn" id = "three">Northeast</button>
+</form>
+<form action = "southeast">
+  <button class="btn" id = "four">Southeast</button>
+</form>
+<form action = "downtown">
+  <button class="btn" id = "five">Downtown</button>
+</form>
+  <form action = "/southwest">
+  <button class="btn" id = "six">Southwest</button>
+</form>
+</div>
+
+</html>

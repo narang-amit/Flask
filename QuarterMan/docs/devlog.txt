@@ -1,0 +1,186 @@
+QuarterMan
+Amit Narang
+Clara Mohri
+Damian Wasilewicz
+Jared Asch
+pd 6
+---------------------
+
+ ______   ______   __   __   __       ______   _______
+/_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\
+\:::_ \ \\::::_\/_\:\ \\ \ \\:\ \    \:::_ \ \\::::__\/__
+ \:\ \ \ \\:\/___/\\:\ \\ \ \\:\ \    \:\ \ \ \\:\ /____/\
+  \:\ \ \ \\::___\/_\:\_/.:\ \\:\ \____\:\ \ \ \\:\\_  _\/
+   \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \
+    \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/
+==============================================================
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+amitN -- 2019-05-07 12:12PM
+--------------------------------------------------------------
+- Created devlog.txt
+==============================================================
+amitN -- 2019-05-09 12:12PM
+--------------------------------------------------------------
+- Added requirements.txt
+==============================================================
+amitN -- 2019-05-10 12:12PM
+--------------------------------------------------------------
+- Added design doc
+==============================================================
+damianW -- 2019-05-12 23:00
+--------------------------------------------------------------
+Responded to feedback on design docs
+Elaborated on site map and landing page
+Changed "I" and "my" to "we" and "our"
+Elaborated on flooring debug
+Elaborated on how we would obtain A/B schedule information
+==============================================================
+damianW -- 2019-05-13 12:29
+--------------------------------------------------------------
+Set up structure for files
+Added app.py
+Home page - has default set up for standard stuy schedule
+modeled on bert schedule; minimal bootstrapification (footer
+and primary alert)
+==============================================================
+claraM -- 2019-05-16
+--------------------------------------------------------------
+Added live time display of minutes into, minutes left, and current time
+==============================================================
+claraM -- 2019-05-19
+--------------------------------------------------------------
+Added highlighting of current period, fixed issues with minute flooring
+==============================================================
+aschJa -- 2019-05-19
+--------------------------------------------------------------
+Added OAuth using Flask-Dance, later removed
+==============================================================
+damianW -- 2019-05-19 17:40
+--------------------------------------------------------------
+Integrated wtforms
+Created custom schedule template page maker and made it work
+with input
+Added nonfunctional dropdown (for later, to decide how many
+periods the user wants to create)
+==============================================================
+damianW -- 2019-05-23 16:30
+--------------------------------------------------------------
+Made small changes with wtforms
+==============================================================
+mohriCl -- 2019-05-24
+--------------------------------------------------------------
+Worked on homepage functionality.
+==============================================================
+aschJa -- 2019-05-26
+--------------------------------------------------------------
+Added OAuth integration with Google using loginpass, a library provided by authlib
+Reorganized file structure
+Slimmed down requirements.txt
+Refactored old code to use Jinja2 templating
+==============================================================
+damianW -- 2019-05-26 17:45
+--------------------------------------------------------------
+Commented all functions, clarified their purposes
+Removed unnecessary bootstrap file
+Commented out functions that we probably will not pursue (i.e,
+the drop down feature in the maketemplate page, since we
+will have a more dynamic way of letting users choose)
+Also added nonfunctional two-submit button so users can choose
+whether to public template to public or private gallery
+==============================================================
+aschJa -- 2019-05-26 21:43
+--------------------------------------------------------------
+Redesigned schedule creation page
+==============================================================
+narangAm -- 2019-05-29 22:55
+--------------------------------------------------------------
+Updated README with running instructions, overview, and API information
+==============================================================
+damianW -- 2019-05-30 23:02
+--------------------------------------------------------------
+Worked with Jared and Clara to attempt to get galleries working
+Bugs with atom and templates not appearing, will debug soon
+==============================================================
+mohriCl -- 2019-05-30
+-------------------------------------------------------------
+Worked on getting gallery up and running. Added function to routes.py to handle specific schedules
+==============================================================
+damianW and claraM -- 2019-06-04 23:33
+--------------------------------------------------------------
+Worked together to get most of galleries working
+Now, when a user goes to public gallery,
+they can click on a link to a template and it will load up
+with that specific schedule's times and slots. Time is
+displayed in seconds which will be fixed with int_to_time
+function. Js onload function should work once python list
+is converted into js, and will be done in class.
+Public gallery templates should work almost indentically to
+private and so the latter should be easy to implement Now
+that private db ownership works.
+==============================================================
+aschJa -- 2019-06-04 23:45
+--------------------------------------------------------------
+Added links to galleries
+Can load day types from csv file
+Home page renders schedule for appropriate day
+==============================================================
+narangAm -- 2019-06-05 10:46
+--------------------------------------------------------------
+Created sample code snippets for Flask-SQLAlchemy and Datetime, and added
+them to the notes_and_code folder. Just need to create a demo of
+Authlib now. Added some dummy data to the schedules.csv file.
+==============================================================
+damianW and aschJa -- 2019-06-05 17:30
+--------------------------------------------------------------
+Worked on getting js for new templates working
+Highlighting the period we're in works now, but with Bug
+where period stays highlighted
+Added conference day schedule csv file
+There is a bug with footer - stays fixed in place when
+scrolling, and is transparent on some pages. Will fix!
+==============================================================
+damianW -- 2019-06-05 19:07
+--------------------------------------------------------------
+Fixed footer position and all the issues with it
+Catching errors: When the end time is earlier than start time
+error is caught, and when schedule is created with empty
+title or description user is sent back to schedule creation
+page.
+NEED TO CATCH:
+when inputted time doesn't match military time format
+non-alphanumeric input
+when schedule slots are empty
+==============================================================
+mohriCl -- 2019-06-05
+-------------------------------------------------------------
+Worked on homepage functionality
+==============================================================
+narangAm -- 2019-06-06 21:47
+--------------------------------------------------------------
+Reconfigured .conf file and rest of project to put up on a server.
+Working on authlib demo and instructions.
+==============================================================
+narangAm -- 2019-06-06 22:52
+--------------------------------------------------------------
+Bought domain name (quartermman.com) because it was cheaper than quarterman.com.
+Binded quartermann.com to the droplet. Reconfigured the .conf files and apache2 guides.
+Redid README.md and updated devlog.
+==============================================================
+mohriCl -- 2019-06-06
+--------------------------------------------------------------
+Fixed highlighting of periods and made more robust.
+Added functionality for when time is before start of schedule or after end of schedule.
+==============================================================
+mohriCl -- 2019-06-07
+-------------------------------------------------------------
+Worked on adding OATH functinoality to droplet. Registered for credients with Google.
+Fixed URI redirect information.
+Contributed in getting home page up to speed with current directory.
+==============================================================
+damianW -- 2019-06-07 00:32
+--------------------------------------------------------------
+Added strip functionality to inputted times
+Handled more errors
+Helped fix js on droplet for time
+==============================================================

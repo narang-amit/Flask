@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container create-schedule-container">
+        <h1 class="title">Create a Schedule Template</h1>
+        <svg id = "add-slot" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+            <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+            <ellipse ry="10" rx="10" id="svg_1" cy="10" cx="10" stroke-width="0" stroke="#000" fill="#007bff"/>
+            <rect id="svg_2" height="2.5" width="10" y="8.75" x="5" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#ffffff"/>
+            <rect id="svg_3" height="10" width="2.5" y="5" x="8.75" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#ffffff"/>
+        </svg>
+        {% with messages = get_flashed_messages() %}
+            {% for message in messages %}
+                <p class = "text-danger">{{ messages[0] }}</p>
+            {% endfor %}
+        {% endwith %}
+        <hr>
+        <form action = "{{ url_for('create_schedule') }}" method="POST" id = "schedule-form">
+            {{ schedule_form.hidden_tag() }}
+
+            <label>Schedule Title</label>{% for error in schedule_form.title.errors %}
+                <p class = "text-danger">{{ error }}</p>
+            {% endfor %}
+            <div class = "input-group">
+                {{ schedule_form.title(class_="form-control", placeholder="A short, memorable title for your schedule") }}
+            </div>
+
+            <label style = "margin-top: 20px;">Schedule Description</label>
+            {% for error in schedule_form.desc.errors %}
+                <p class = "text-danger">{{ error }}</p>
+            {% endfor %}
+            <div class="input-group">
+                {{ schedule_form.desc(class_="form-control", placeholder="A quick description of your schedule") }}
+            </div>
+
+            <div class="custom-control custom-checkbox mr-sm-2" style="margin-top: 20px">
+                {{ schedule_form.private(class_="custom-control-input", id="private-checkbox", style="padding: 0px 10px;") }}
+                <label class="custom-control-label" for="private-checkbox">Keep this Schedule Private</label>
+            </div>
+
+
+            <hr>
+
+        </form>
+        <button class = "btn btn-outline-primary" onclick="scheduleToJSON()">Create Schedule</button>
+    </div>
+    <div>
+       <footer class="page-footer bg-dark">
+           <div class="footer-copyright text-center py-3 text-white">© 2019 Quarterman</div>
+       </footer>
+   </div>
+
+    <script type="text/javascript" src="{{ url_for('static', filename='js/schedule.js') }}"></script>
+{% endblock %}

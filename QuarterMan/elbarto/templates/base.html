@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<!-- this is the template that will be referenced in all other html files of this format-->
+    <head>
+        <title>{% block title %} Default {% endblock %}</title>
+        <link rel = "stylesheet" href = "{{ url_for('static', filename='css/styles.css') }}" type="text/css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+        <!-- Bootstrap CDN -->
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md bg-primary">
+            <a class="navbar-brand mx-auto" href="{{ url_for('index') }}">Stuyvesant Scheduling</a>
+            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+                <ul class="navbar-nav ml-auto">
+                    {% if session.get("user") == None %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/google/login">
+                                <span>Google Login</span>
+                                <img class = "nav-google-logo" src = "{{ url_for('static', filename='img/google-icon.png') }}"/>
+                            </a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('create_schedule') }}">Create Schedule</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('private_gallery') }}">My Schedules</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('public_gallery') }}">Schedule Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+        {% block content %}
+
+        {% endblock %}
+        <!-- <footer class="page-footer bg-dark">
+            <div class="footer-copyright text-center py-3 text-white">© 2019 Quarterman</div>
+        </footer> -->
+    </body>
+</html>

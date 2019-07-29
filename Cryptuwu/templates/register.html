@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %} Register {% endblock %}
+
+{% block pageTop %}
+
+
+<div class="top-bar">
+  <div class="top-bar-left">
+  <ul class="menu">
+      <li><a href="/">Home</a></li>
+      <li><a href="/chart"> Charts</a></li>
+  </ul>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center"> CryptUwU Register Page</h1>
+{% set msgs = get_flashed_messages() %}
+{% for message in msgs %}
+<div class="callout alert center" data-closable>
+  <p>{{ message }}</p>
+  <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endfor %}
+
+<div class="grid-container">
+  <form action="/register" method="POST">
+    Username:    <br>
+    <input type="text" name="username" placeholder="username">
+    Password:<br>
+    <input style="width:100%" type="password" name="password1" placeholder="password">
+    Retype Password:<br>
+    <input style="width:100%" type="password" name="password2" placeholder="password"><br>
+    <input class="button" type="submit">
+  </form>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %} {% endblock %}
+
+{% block content %}
+
+<div class="container create-schedule-container">
+  <h1>Schedules</h1>
+<div class="flex-row">
+
+  {% for schedule in schedules %}
+
+  <figure class="figure">
+      <a href="{{ url_for('display_schedule', id = schedule.id) }}">
+	{{schedule.name }}
+        <figcaption class="figure-caption figure-caption-title">{{schedule.desc}}</figcaption>
+      </a>
+    </figure>
+
+    {% endfor %}
+
+</div>
+</div>
+<div>
+   <footer class="page-footer bg-dark">
+       <div class="footer-copyright text-center py-3 text-white">© 2019 Quarterman</div>
+   </footer>
+</div>
+{% endblock %}

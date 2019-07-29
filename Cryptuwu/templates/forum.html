@@ -1,0 +1,56 @@
+{% extends "home.html" %}
+
+{% block title %} Forum 
+<link rel="stylesheet" type="text/css" href="static/thread.css"/>
+{% endblock %}
+
+{% block content %}
+<h2 class="text-center"> {{topic}} Forum </h2>
+<div class="grid-container">
+
+
+{% set msgs = get_flashed_messages() %}
+
+{% for message in msgs %}
+<div class="callout alert center" data-closable>
+  <p>{{ message }}</p>
+  <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+  </button>
+  </div>
+{% endfor %}
+
+
+  
+<table class="hover">
+  <thead><tr>
+      <th> Post </th><th> user </th>
+  </tr></thead>
+  <tbody>
+    
+    
+    {% for thread in threads %}
+    <tr>
+      <td><a href="/thread?id={{thread[0]}}">{{ thread[2] }}</a></td>
+      <td>{{thread[1]}}</td>
+    </tr>
+
+    {% endfor %}
+    
+  </tbody>
+  
+</table>
+
+{% if not notLoggedIn %}
+<form action="/mkthr" method="POST">
+  <input type="hidden" name="topic" value={{idtopic}}>
+  <textarea name="initPost" rows="5" cols="50" placeholder="Make your post here!" required autofocus></textarea>
+  <input class="button" type="submit" value="Submit">
+</form>
+{% endif %}
+
+
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,204 @@
+hax4snax
+----------------
+Amit Narang
+Maggie Zhao
+Jared Asch
+Peter Cwalina
+pd 07
+----------------
+Craving-Based Recipe Generator
+
+______   ______   __   __   __       ______   _______
+/_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\
+\:::_ \ \\::::_\/_\:\ \\ \ \\:\ \    \:::_ \ \\::::__\/__
+\:\ \ \ \\:\/___/\\:\ \\ \ \\:\ \    \:\ \ \ \\:\ /____/\
+ \:\ \ \ \\::___\/_\:\_/.:\ \\:\ \____\:\ \ \ \\:\\_  _\/
+  \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \
+   \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/
+==============================================================
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+==============================================================
+
+zhaoM -- 2018-11-20 8:49
+--------------------------------------------------------------
+finished sitemap with Peter
+==============================================================
+
+narangA -- 2018-11-21 10:45
+--------------------------------------------------------------
+created design document, repo
+
+cwalinaP -- 2018-11-21 1:15
+--------------------------------------------------------------
+redrew arrows to show that the restaurant menu actually
+  redirects to the search page, which shows foods similar to
+  the food a user chooses from the menu
+
+narangA -- 2018-11-21 14:47  --------------------------------------------------------------
+created ReadMe and Devlog
+==============================================================
+
+zhaoM -- 2018-11-25 21:31
+--------------------------------------------------------------
+fixed typos
+added more labels to clarify the processes shown by the arrows
+  (i.e. how the restaurant search process is slightly different
+  from the food search, but use the same website components)
+
+aschJ -- 2018-11-25 22:15
+--------------------------------------------------------------
+fixed component map by making a interactions between components more clear
+
+==============================================================
+narangA -- 2018-11-26 0:27
+--------------------------------------------------------------
+updated design document with changes from class on Wednesday
+
+narangA -- 2018-11-26 12:50
+--------------------------------------------------------------
+modified due dates for task breakdown
+
+zhaoM -- 2018-11-26 15:30
+--------------------------------------------------------------
+Created basic landing site with separate areas for the search
+  bar and cards that will be used to display the foods or
+  restaurants the user searches
+
+cwalinaP -- 2018-11-26 20:24
+--------------------------------------------------------------
+Added a basic template for the recipe page
+
+zhaoM -- 2018-11-26 22:30
+--------------------------------------------------------------
+Added navigation bar at the top of the page and the search bar.
+  Both currently lead nowhere.
+  Have to do: loop for cards.
+
+aschJ -- 2018-11-26 23:00
+--------------------------------------------------------------
+further looked into API usage and mapped out in more detail what
+endpoints our application will use
+
+==============================================================
+
+aschJ -- 2018-11-27 18:41
+--------------------------------------------------------------
+Reorganized file system with static folder
+Touched up CSS for the homepage
+Added search functionality for both restaurants and recipes
+
+aschJ -- 2018-11-27 18:56
+--------------------------------------------------------------
+Added popular restaurants to the homepage
+
+==============================================================
+
+aschJ -- 2018-11-28 12:41
+--------------------------------------------------------------
+Change default image if none provided by API, fixed aspect ration for images
+Restaurant and recipe checkboxes checked by default
+
+==============================================================
+
+cwalinaP -- 2018-11-29 12:43
+--------------------------------------------------------------
+Added basic account functionality
+Also added hashed passwords
+
+==============================================================
+
+narangA -- 2018-11-30 12:55
+--------------------------------------------------------------
+Added base case for logout, fixed import structure
+
+zhaoM -- 2018-11-30 12:56
+--------------------------------------------------------------
+Started on accessing daily menu for the restaurants found on Zomato.
+==============================================================
+
+zhaoM -- 2018-12-01 15:00
+--------------------------------------------------------------
+Realized that the Zomato API does not support daily menu for all
+  restaurants on the API (returns an empty daily menu). Looking for
+  new restaurant menu APIs.
+==============================================================
+
+narangA -- 2018-12-02 13:32
+--------------------------------------------------------------
+Created Requirements.txt
+
+zhaoM -- 2018-12-03 19:00
+--------------------------------------------------------------
+Possible restaurant APIs -- NYPL database (problem: all menus are
+  images), Foodsquare API (problem: has venues that are not always
+  restaurants, not all restaurants have menu information), Locu API
+  (problem: no registration), openmenu API (problem: no longer free),
+  Gipsee API (not for private consumers), EatStreet API
+Possible nutrition/recipe APIs -- Nutrionix, spoonacular(needs credit
+  card to access)
+==============================================================
+
+cwalinaP -- 2018-12-03 13:15
+--------------------------------------------------------------
+Made functs for removing and adding favorites from db
+and added ability to provide your own api keys in the command
+line when starting the app Ex: python app.py ZOMATO_KEY FOOD2FORK_KEY
+Also added a check for any bad api keys
+==============================================================
+
+narangA -- 2018-12-03 16:32
+--------------------------------------------------------------
+Commented App.Py
+reassessed and assigned new tasks to team based off demo functionality
+Wrote README
+==============================================================
+
+cwalinaP -- 2018-12-03 17:20
+--------------------------------------------------------------
+Removed ability to specify api keys in command line now instead
+go to the api.json file to input your keys
+==============================================================
+
+cwalinaP -- 2018-12-04 17:25
+--------------------------------------------------------------
+Clicking on a restaurant now actually takes you somewhere
+Still have to spruce up the css and find a way to make the
+menu look nicer
+==============================================================
+
+aschJ -- 2018-12-04 23:19
+--------------------------------------------------------------
+Created a universal base.html to be used by all pages (includes navbar)
+Clicking on recipe takes user to recipe page
+==============================================================
+
+zhaoM -- 2018-12-04 23:30
+--------------------------------------------------------------
+Finished writing 411s for Spoonacular, Walmart, and EatStreet APIs.
+==============================================================
+
+zhaoM -- 2018-12-5 21:15
+--------------------------------------------------------------
+Basic restaurant menus completed, with descriptions where possible.
+Still need to do: link each item on menu to a search; css
+==============================================================
+cwalinaP -- 2018-12-06 21:35
+--------------------------------------------------------------
+Did some back end stuff for favorites fixed some navbar shenanigans
+created favorites page and made restaurants work with it.
+==============================================================
+
+aschJ -- 2018-12-06 22:35
+--------------------------------------------------------------
+Reworked some CSS across the site
+Created recipe information page
+Created cards for recipes in the favorites page
+==============================================================
+
+narangA -- 2018-12-07 2:32
+--------------------------------------------------------------
+Edited the design document to better reflect changes we made to our project
+Fixed non-fluid navbar issue
+Added comments throughout App.Py
+==============================================================

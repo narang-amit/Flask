@@ -1,0 +1,81 @@
+{% extends "forum.html" %}
+
+{% block title %} 
+{{ threadname }} 
+
+{% endblock %}
+
+{% block static %}
+
+<link rel="stylesheet" href="static/thread.css">
+
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+<div class="grid-container">
+
+
+{% set msgs = get_flashed_messages() %}
+
+{% for message in msgs %}
+<div class="callout alert center" data-closable>
+  <p>{{ message }}</p>
+  <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+  </button>
+  </div>
+{% endfor %}
+<br>
+
+<div class="grid-container">
+  
+{% for post in posts %}
+
+<div class="post">
+  
+  <div class="post_user" id="{{post[3]}}">
+    <b>{{post[0]}}</b>
+    <pre style="display:inline;"> Upvotes: {{post[4]}} Posted at: {{post[2]}}</pre>
+    <div class="stuff">
+ 
+
+      <button class="button" style="display:inline; float:right;"  data-open="addPost{{post[3]}}" {% if notLoggedIn %} disabled {% endif %}> Comment</button>
+      <div class="reveal " data-toggle="addPost{{post[3]}}" id="addPost{{post[3]}}" data-reveal data-open data-close-on-click=false>
+	<p class="lead"> Please enter desired content</p>
+	<form action="/addPost" method="POST">
+	  <input type="hidden" name="id" value={{threadID}}>
+	  Replying to {{post[0]}}:{{post[1]}}<br>
+	  <textarea wrap="hard" name="post">@{{post[0]}}:</textarea>
+	  <input class="button" name="submit" type="submit">
+	</form>
+	<button class="close-button" data-close aria-label="Close Modal" type="button">
+	  <span aria-hidden="true">&times;</span>
+	</button>
+      </div>
+      
+      <form action="#" method="POST" style="display:inline; float:right;">
+	<button class="button" value="{{post[3]}},{{threadID}}" name="upvote" {% if notLoggedIn %} disabled {% endif %}>Upvote</button> 
+      </form>
+      
+    </div>
+  </div>
+  
+  <div class="post_post">
+    {{post[1]}}
+  </div>
+</div>
+
+{% endfor %}
+
+
+ 
+
+</div>
+
+{% endblock %}
+

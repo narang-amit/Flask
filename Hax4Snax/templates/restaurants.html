@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %} {{name}} {% endblock %}
+
+{% block favButton %}
+{% if favorited %}
+<li class="nav-item">
+  <a style = "color: crimson; font-weight: 300; padding-left: 15px;" class="nav-link" href="/unfavoriteRes/{{id}}">Unfavorite This!</a>
+</li>
+{% else %}
+<li class="nav-item">
+  <a style = "color: crimson; font-weight: 300; padding-left: 15px;" class="nav-link" href="/favoriteRes/{{id}}">Favorite This!</a>
+</li>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<h1 style = "margin: 20px auto 0;">{{name}} <span style="font-size:1.5rem; font-weight:300;"> at {{address}}</span></h1>
+    <div class = "row" style = "padding: 10px">
+        <div class = "col-lg-12 col-md-12 col-sm-12" style = "padding: 30px">
+          <div class = "col-lg-8 col-md-8 col-sm-8" style = "margin: 0px;" >
+          </div>
+              <!-- Average Cost for two people:{{average}}
+            </p>
+            <a href={{menu}}">Menu!</a>-->
+            <h3> Daily Menu </h3>
+            <div class = "row">
+          {% for category in menu %}
+          <div class="col-lg-4" style = "margin-top: 10px;">
+            <br> <br>
+          <h4> {{category}} </h4><br>
+            {% for item in menu[category] %}
+            <li class="list-group-item">
+              {{ item['name'] }}   <span>${{ item['basePrice'] }}</span>
+              {% if item['description'] is not none %}
+              <br>
+                {{ item['description']}}
+              {% endif %}
+                </li>
+            {% endfor %}
+            <br> <br>
+          </div>
+          <br>
+            {% endfor %}
+            <br> <br>
+          </div>
+
+          </div>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,217 @@
+Nahasapeemapetilon
+Adil Gondal
+Amit Narang
+Rubin Peci
+Qian Zhou
+pd 07
+---------------------
+The End
+Project Description:
+We are creating a cryptocurrency forum that allows users to have meaningful discussion about important topics in the crypto world.
+
+
+ ______   ______   __   __   __       ______   _______
+/_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\
+\:::_ \ \\::::_\/_\:\ \\ \ \\:\ \    \:::_ \ \\::::__\/__
+ \:\ \ \ \\:\/___/\\:\ \\ \ \\:\ \    \:\ \ \ \\:\ /____/\
+  \:\ \ \ \\::___\/_\:\_/.:\ \\:\ \____\:\ \ \ \\:\\_  _\/
+   \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \
+    \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/
+==============================================================
+BUGS
+
+*RESOLVED ON 2019/01/11*
+- graph.py (2019/01/10)
+	- Candlestick graph using plotly doesn't showup properly
+- Turns out there is on specific date on a specific data range that is messed up on the Nomics API, not our fault
+- More details in graph.py
+
+- Database bugs
+	- Many listed, mostly due to lack of verification and messy database handling, most have been fixed
+
+CHANGES TO DESIGN AND PROJECT
+- Clarify changes to the component map
+	- Specify how app.py will import the .py files inside the util/ folder
+	- Fix arrows and make other relationships cleare
+- Changed database schema
+	- Added a new table - username_threads, which keeps track of all the threads a person makes
+	- Refactored the other table - username_posts, which keeps track of all the posts a person makes
+- Mention how we will use Foundation for CSS and JavaScript for some backend work
+
+2019-01-14
+- Decide that a seperate chart page will be more effective than displaying it on the main page
+- Add several options for charts vs. just showing the BTC price
+- Add a new "Coins" page that shows a dashboard data of real-time updates regarding all the coins on Nomics API
+
+2019-01-14
+- Add a new feature, notifications
+	- Allow a user to see when someone upvotes their posts/threads or adds on to their threads
+	- /charts route will now provide the user with 3 options to look up various information regarding the market
+
+===========================================
+
+ qianZ -- 2019-01-07 18:30
+--------------------------------------------------------------
+- Created devlog
+
+ adilG -- 2019-01-08 22:00
+--------------------------------------------------------------
+- As a group modifed the design doc:
+
+Adil: Updated site map to clarify forum pages as well as landing page
+Rubin: Added a thread table in database schema to keep track of threads for all users.
+Qian: Added information about JavaScript and Foundation.
+Amit: Updated component map to promote readability and clarify confusion about app.py file.
+
+ adilG -- 2019-01-09 1:17
+--------------------------------------------------------------
+- Added project description
+
+narangA -- 2019-01-09 10:50
+--------------------------------------------------------------
+- Update design doc
+
+peciR -- 2018-01-09 10:50
+--------------------------------------------------------------
+- Update devlog to reflect changes on design doc
+
+qianZ -- 2019-01-09 23:28
+--------------------------------------------------------------
+- Start working on templating
+
+peciR -- 2018-01-09 13:10
+--------------------------------------------------------------
+- Modify methods in crypto.py to take optional parameters
+- Add candlestick methods in crypto.py
+
+peciR -- 2018-01-10 20:50
+--------------------------------------------------------------
+- Add graph.py to create relevant charts
+	- Bug with displaying the data - chart looks messed up, must fix
+- Modify candlestick methods in crypto.py to work with graph.py
+
+qianZ -- 2019-01-11 01:11
+--------------------------------------------------------------
+- created templates; started foundation for layout
+
+peciR -- 2018-01-11 11:24
+--------------------------------------------------------------
+- fix bugs in the graph.py
+- add methods in the crypto.py to get more csv data to test with graph.py
+- graph.py creates the graph as expected, and the iFrame it generates is also functional as an HTML snippet :3
+- Comment methods in crypto.py and graph.py
+
+narangA -- 2018-01-12 17:30
+--------------------------------------------------------------
+- wrote all database functions
+
+qianZ -- 2019-01-12 19:52
+--------------------------------------------------------------
+- bettered js for reveal in comment
+- tried to add user login fxn unsuccessfully
+
+narangA -- 2018-01-12 23:35
+--------------------------------------------------------------
+- added another db function for viewing topics
+- tried to remedy Qian's fxn problems
+
+qianZ -- 2019-01-13 01:39
+--------------------------------------------------------------
+- used dbEditor to display forum transactions
+- modified some dbEditor to make it fit more;
+
+narangA -- 2019-01-13 10:20
+--------------------------------------------------------------
+- modified dbEditor to better encompass app's needs;
+- added new functions for user functionality;
+
+qianZ -- 2019-01-13 14:19
+--------------------------------------------------------------
+- added some profile fxns
+
+narangA -- 2019-01-14 15:56
+--------------------------------------------------------------
+- added voting functionality on the backend
+
+
+qianZ -- 2019-01-14 20:35
+--------------------------------------------------------------
+- modified some template
+
+narangA -- 2019-01-14 22:17
+--------------------------------------------------------------
+- stopped users from voting more than once
+
+peciR -- 2018-01-14 23:30
+--------------------------------------------------------------
+- Procure the methods that allow the user to pick out of a list of coins on the Nomics API
+- Fix bugs regarding the charts
+- Clean up the HTML templating
+
+narangA -- 2019-01-15 12:52
+--------------------------------------------------------------
+- cleared database, fixed error with wiping / reset function
+
+gondalA -- 2019-01-15 13:20
+--------------------------------------------------------------
+- update README.md
+
+narangA -- 2019-01-15 12:52
+--------------------------------------------------------------
+- added dbEditor functions to handle notifications.
+- might need further edits, not sure.
+
+peciR -- 2018-01-15 13:30
+--------------------------------------------------------------
+- Add new templates and modify the original design to add more features
+- Fix up bugs in assorted files
+
+narangA -- 2019-01-15 20:43
+--------------------------------------------------------------
+- fixed upvoting feature to account for diff users
+
+narangA -- 2019-01-15 21:36
+--------------------------------------------------------------
+- fixed notifications bug with failed notifications
+- changed format of table for notifications to show actions (generalizing it for upvotes as well)
+- added parser
+
+qianZ -- 2019-01-15 23:38
+--------------------------------------------------------------
+- modified some template for profile.html; back-end function...?
+
+narangA -- 2019-01-16 9:42
+--------------------------------------------------------------
+- made datetime functionality
+
+peciR -- 2018-01-16 11:25
+--------------------------------------------------------------
+- More bugfixes and stress-testing :3
+- Add new methods to crypto.py and a new template to fully utilize the features on /charts
+
+narangA -- 2019-01-16 12:31
+--------------------------------------------------------------
+- changed from CryptoUwu to CryptUwus
+- changed notifs formatting
+- fixed notif bug
+- commenting code
+
+qianZ -- 2019-01-16 17:29
+--------------------------------------------------------------
+- started to try out css for thread as instructed by Defense.
+
+peciR -- 2018-01-16 19:30
+--------------------------------------------------------------
+- More bugfixes and stress-testing :3
+- Add try/except blocks
+
+gondalA -- 2018-01-16 21:00
+--------------------------------------------------------------
+- Update design doc to reflect current state of project
+- Added dashboard to site map
+- Database Schema has notifications table
+
+gondalA -- 2018-01-17 06:30
+--------------------------------------------------------------
+- Make and upload video demo
+- Update README.md to link to video

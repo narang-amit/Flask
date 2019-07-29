@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+ {% block title %} {% endblock %}
+
+ {% block content %}
+     <div class = "row">
+       <!-- Creates table for schedule -->
+        <div class = "col-lg-8 schedule-container">
+            {% if day_type %}
+                <h1 class = "schedule-title">{{ day_type }} {{ name }} Day</h1>
+            {% else %}
+                <h1 class = "schedule-title">{{ name }}</h1>
+            {% endif %}
+            <table class = "schedule-table" border="1" width="100%" cellspacing="3">
+
+
+	      {% for i in range(schedule|length) %}
+            <tr id = "slot-{{ i }}"><td align="center"> {{ schedule[i].name }} </td><td>&nbsp;{{ (schedule[i].start|int_to_time).strftime('%I:%M %p') }} - {{ (schedule[i].end|int_to_time).strftime('%I:%M %p') }}</td></tr>
+          {% endfor %}
+
+            </table>
+        </div>
+
+        <div class = "col-lg-3 time-left-container">
+            <table id = "time-left-table" border="0" cellspacing="3" width="100%">
+                <tr><td width="100%" align="center" colspan="2"><h1 style="color: #007bff" ">Current Time</h1></td></tr>
+	      <tr>
+                    <td width="50%" align="center"><font color="#008000" size="10" ><div id = "minutes_into"></div></font></td>
+                    <td width="50%" align="center"><font color="#FF0000" size="10"><div id = "minutes_left"></div></font></td>
+                </tr>
+                <tr>
+                  <td width="50%" align="center"><font size="2" face="Verdana"><b><div id = "into_txt">minutes into</div></b></font></td>
+                    <td width="50%" align="center"><font size="2" face="Verdana"><b><div id = "left_txt">minutes left</div></b></font></td>
+                </tr>
+                <tr>
+		  <td width="100%" align="center" colspan="2"><font size ="6"><div id = "time"></div></font></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+     <div>
+        <footer class="page-footer bg-dark">
+            <div class="footer-copyright text-center py-3 text-white">© 2019 Quarterman</div>
+        </footer>
+    </div>
+
+    <script type="text/javascript">
+        schedule = {{ schedule|safe }};
+        document.addEventListener("DOMContentLoaded", function(e){
+            initialize(schedule);
+        })
+    </script>
+    <script type="text/javascript" src = "{{ url_for('static', filename='js/display.js') }}"></script>
+
+{% endblock %}
