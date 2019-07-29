@@ -32,9 +32,8 @@ $ . tm/bin/activate
 3. In your activated virtual environment, run the following commmands to install the Dependencies
 
 ```
-(tm) $ pip3 install wheel
-(tm) $ pip3 install flask
-(tm) $ pip3 install passlib
+(tm) $ pip3 freeze > requirements.txt
+(tm) $ pip3 install -r requirements.txt
 ```
 
 4. Go to the folder
