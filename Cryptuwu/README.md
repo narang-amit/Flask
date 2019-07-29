@@ -10,31 +10,15 @@ Users will be able to create accounts to comment on threads relating to all of t
 #### Features 
 - Allows users to make accounts, login, and make posts.
 - Posts can be upvoted, saved, and replied to. 
-- Stats regarding various crytocurrencies can be viewed, and some coins can be favorited. 
-
-[our video demo here](https://youtu.be/fju5beBFGkU)
+- Stats regarding various crytocurrencies can be viewed, and some coins can be favorited.
 
 ### Necessary Packages
 1. Datetime   
-`pip install datetime`   
-
 2. Plotly   
-`pip install plotly`   
-  
-3. Pandas   
-`pip install pandas`     
-    
+3. Pandas    
 4. Passlib    
-`pip install passlib`   
-
 5. Wheel   
-`pip install wheel`   
-
-6. Flask   
-`pip install flask`   
-
-All packages are included in requirementst.txt so to download all at once use:
-`pip install -r requirements.txt`   
+6. Flask    
  
 #### How to run the project   
 1. Create a virtual environment  
@@ -50,7 +34,10 @@ All packages are included in requirementst.txt so to download all at once use:
 `cd SDFP/` 
     
 5. Install the necessary python modules   
-`pip install -r requirements.txt`   
+```
+pip3 freeze > requirements.txt
+pip3 install -r requirements.txt
+``` 
    
 6. Procure API keys for the Nomics and Plotly APIs and add them to `keys/(APIname).json`
    
