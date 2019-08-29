@@ -1,4 +1,6 @@
-# [QuarterMan](www.quartermman.com)
+# QuarterMan
+
+# Note: This project only works if hosted on a domain due to the Google OAuth authentication.
 
 # Roster
 ## Amit Narang (PMAN), Jared Asch, Damian Wasilewicz, & Clara Mohri
